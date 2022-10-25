@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+Flight.destroy_all
+Seat.destroy_all
+
+flight = Flight.create(number:816, company:'Oceanic')
+
+for i in 1..10 do
+  seat = Seat.create(flight:flight, number:i, taken:false)
+end
